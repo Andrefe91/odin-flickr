@@ -1,0 +1,14 @@
+<div>
+    <h2>Photos, all the photos !!</h2>
+</div>
+
+<%= form_with url: "/photos", method: :get do |form| %>
+    <%= form.label :user_id, "User ID: " %>
+    <%= form.text_field :user_id %>
+
+    <%= form.submit "[Show]" %>
+<% end %>
+
+<div>
+    <%=p  @photos %>
+</div>
