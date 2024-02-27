@@ -7,8 +7,18 @@
     <%= form.text_field :user_id %>
 
     <%= form.submit "[Show]" %>
+<% end %> <br>
+
+<%# Odd... I worked but not sure why %>
+<% @photos.each do |photo| %>
+    <img src= <%= photo %> alt="photo"> <br>
 <% end %>
 
-<div>
-    <%=p  @photos %>
-</div>
+<%# Couldnt take it out of the view without this hack %>
+<% if @photos_json.size == 0 %>
+    <% flash.each do |type, msg| %>
+        <div>
+            <strong><%= msg %></strong>
+        </div>
+    <% end %>
+<% end %>
